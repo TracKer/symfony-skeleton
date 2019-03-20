@@ -88,19 +88,6 @@ gulp.task('sass:watch', function () {
   ], gulp.series('sass'));
 });
 
-gulp.task('watch', gulp.series(
-  'default',
-
-  gulp.parallel(
-    'js:watch',
-    'sass:watch',
-  )
-));
-
-/***********************************************************************************************************************
- * Default
- **********************************************************************************************************************/
-
 gulp.task('default', gulp.parallel(
   gulp.series(
     gulp.parallel(
@@ -115,4 +102,13 @@ gulp.task('default', gulp.parallel(
       'images',
     ),
   ),
+));
+
+gulp.task('watch', gulp.series(
+  'default',
+
+  gulp.parallel(
+    'js:watch',
+    'sass:watch',
+  )
 ));
