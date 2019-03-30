@@ -18,7 +18,7 @@ class Country {
   private $id;
 
   /**
-   * @ORM\Column(type="string", length=2)
+   * @ORM\Column(type="string", length=2, unique=true)
    */
   private $code;
 
