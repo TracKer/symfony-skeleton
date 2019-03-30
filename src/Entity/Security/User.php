@@ -4,12 +4,17 @@ namespace App\Entity\Security;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\UserInterface;
+use Symfony\Component\Security\Core\User\UserInterface as BaseUserInterface;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
  */
 class User implements UserInterface {
+
+  private const ROLE_DEFAULT = 'ROLE_USER';
+  private const ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
+
   /**
    * @var int
    * @ORM\Id
@@ -426,5 +431,28 @@ class User implements UserInterface {
     }
 
     return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isEqualTo(BaseUserInterface $user) {
+    if (!$user instanceof self) {
+      return false;
+    }
+
+    if ($this->password !== $user->getPassword()) {
+      return false;
+    }
+
+    if ($this->salt !== $user->getSalt()) {
+      return false;
+    }
+
+    if ($this->email !== $user->getEmail()) {
+      return false;
+    }
+
+    return true;
   }
 }
