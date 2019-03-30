@@ -28,7 +28,7 @@ class Country {
   private $name;
 
   /**
-   * @ORM\ManyToMany(targetEntity="App\Entity\Channel", mappedBy="country")
+   * @ORM\ManyToMany(targetEntity="App\Entity\Channel", mappedBy="countries")
    */
   private $channels;
 
