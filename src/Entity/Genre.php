@@ -23,7 +23,7 @@ class Genre {
   private $name;
 
   /**
-   * @ORM\ManyToMany(targetEntity="App\Entity\Channel", inversedBy="genres")
+   * @ORM\ManyToMany(targetEntity="App\Entity\Channel", mappedBy="genres")
    */
   private $channels;
 

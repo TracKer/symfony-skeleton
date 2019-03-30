@@ -38,7 +38,7 @@ class Channel {
   private $countries;
 
   /**
-   * @ORM\ManyToMany(targetEntity="App\Entity\Genre", mappedBy="channels")
+   * @ORM\ManyToMany(targetEntity="App\Entity\Genre", inversedBy="channels")
    */
   private $genres;
 
