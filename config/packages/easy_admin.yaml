@@ -30,3 +30,12 @@ easy_admin:
             type_options:
               entry_type: App\Form\Type\RoleChoiceType
               required: true
+
+    Channel:
+      class: App\Entity\Channel
+
+    Country:
+      class: App\Entity\Country
+
+    Genre:
+      class: App\Entity\Genre
