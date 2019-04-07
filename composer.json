@@ -1,4 +1,6 @@
 {
+    "name": "tracker2k/symfony-skeleton",
+    "description": "Symfony web application skeleton, with FOSUserBundle and EasyAdmin configured",
     "type": "project",
     "license": "proprietary",
     "require": {
