@@ -29,7 +29,7 @@ class AppFixtures extends Fixture implements ContainerAwareInterface {
     // $manager->persist($product);
     $user = (new User())
       ->setUsername('admin')
-      ->setEmail('andrey.rudenko@gmail.com')
+      ->setEmail('change_me@example.com')
       ->addRole('ROLE_SUPER_ADMIN')
       ->setEnabled(true);
 
